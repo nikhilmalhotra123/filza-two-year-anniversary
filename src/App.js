@@ -39,6 +39,7 @@ function App() {
   const [quoteIndex, setQuoteIndex] = useState(getRandomInt(numQuotes));
   const [imageIndex, setImageIndex] = useState(getRandomInt(numImages));
   const [joke, setJoke] = useState("...loading next joke");
+  const [countdownMessageFlag, setCountdownMessageFlag] = useState(true);
 
   const generateJoke = async () => {
     const config = {
@@ -60,6 +61,11 @@ function App() {
     setImageIndex(getRandomInt(numImages));
   }
 
+  function jokeAlert() {
+    generateJoke();
+    alert("Random joke: " + joke);
+  }
+
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
@@ -73,23 +79,23 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div>💜💜💜 Happy 2 Year Anniversary Cutie! 💜💜💜</div>
+        <div onClick={() => jokeAlert()}>💜💜💜 Happy 2 Year Anniversary Cutie! 💜💜💜</div>
       </header>
-      <Countdown
-        className="countdown-display"
-        date={new Date(2022, 9, 27)}
-        renderer={renderer}
-      />
-      <div className="main">
+      <div onClick={() => setCountdownMessageFlag(!countdownMessageFlag)}>
+        {countdownMessageFlag ? <Countdown
+          date={new Date(2022, 9, 27)}
+          renderer={renderer}
+        /> : <div>Clicking the time doesn't make it go faster</div>}
+      </div>
 
+      <div className="main">
         <div className="quote-and-pic">
           <img src={IMAGES[imageIndex]} className="App-logo" alt="logo" />
-          <p>{quotes[quoteIndex]}</p>
+          <a href="https://www.slither.io"><p>{quotes[quoteIndex]}</p></a>
           <button className="new-button" onClick={() => updateQuoteAndImage()}>Click to get a new picture or quote or both</button>
         </div>
       </div>
-
-      <div className="footer">Made with ❤️ by Nikki</div>
+      <div className="footer">Made with ❤️by Nikki. Can you find some of the hidden things on this website? (Hint: click around)</div>
     </div>
   );
 }

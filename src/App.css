@@ -58,3 +58,9 @@
 img {
   width: 350px;
 }
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
