@@ -1,6 +1,6 @@
 import './App.css';
 import quotes from './quotes';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Countdown from 'react-countdown';
 import img0 from './images/0.png';
 import img1 from './images/1.png';
@@ -38,6 +38,22 @@ function App() {
 
   const [quoteIndex, setQuoteIndex] = useState(getRandomInt(numQuotes));
   const [imageIndex, setImageIndex] = useState(getRandomInt(numImages));
+  const [joke, setJoke] = useState("...loading next joke");
+
+  const generateJoke = async () => {
+    const config = {
+      headers: {
+        accept: "application/json"
+      }
+    };
+    const res = await fetch("https://icanhazdadjoke.com/", config);
+    const data = await res.json();
+    setJoke(data.joke);
+  };
+
+  useEffect(() => {
+    generateJoke();
+  }, []);
 
   function updateQuoteAndImage() {
     setQuoteIndex(getRandomInt(numQuotes));
@@ -57,19 +73,23 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div>❤️❤️❤️ Happy 2 Year Anniversary Cutie! ❤️❤️❤️</div>
-
+        <div>💜💜💜 Happy 2 Year Anniversary Cutie! 💜💜💜</div>
       </header>
       <Countdown
+        className="countdown-display"
         date={new Date(2022, 9, 27)}
         renderer={renderer}
       />
       <div className="main">
-        <img src={IMAGES[imageIndex]} className="App-logo" alt="logo" />
-        <p>{quotes[quoteIndex]}</p>
-        <button className="new-button" onClick={() => updateQuoteAndImage()}>Click to get a new picture or quote or both</button>
+
+        <div className="quote-and-pic">
+          <img src={IMAGES[imageIndex]} className="App-logo" alt="logo" />
+          <p>{quotes[quoteIndex]}</p>
+          <button className="new-button" onClick={() => updateQuoteAndImage()}>Click to get a new picture or quote or both</button>
+        </div>
       </div>
-      <div>Made with ❤️ by Nikhil</div>
+
+      <div className="footer">Made with ❤️ by Nikki</div>
     </div>
   );
 }
