@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/filza-two-year-anniversary/static/css/main.a617e044.chunk.css",
+    "main.js": "/filza-two-year-anniversary/static/js/main.c0648d1e.chunk.js",
+    "main.js.map": "/filza-two-year-anniversary/static/js/main.c0648d1e.chunk.js.map",
+    "runtime-main.js": "/filza-two-year-anniversary/static/js/runtime-main.e03a2baf.js",
+    "runtime-main.js.map": "/filza-two-year-anniversary/static/js/runtime-main.e03a2baf.js.map",
+    "static/js/2.23fcf8c0.chunk.js": "/filza-two-year-anniversary/static/js/2.23fcf8c0.chunk.js",
+    "static/js/2.23fcf8c0.chunk.js.map": "/filza-two-year-anniversary/static/js/2.23fcf8c0.chunk.js.map",
+    "static/js/3.a3de07fe.chunk.js": "/filza-two-year-anniversary/static/js/3.a3de07fe.chunk.js",
+    "static/js/3.a3de07fe.chunk.js.map": "/filza-two-year-anniversary/static/js/3.a3de07fe.chunk.js.map",
+    "index.html": "/filza-two-year-anniversary/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/filza-two-year-anniversary/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.23fcf8c0.chunk.js.LICENSE.txt": "/filza-two-year-anniversary/static/js/2.23fcf8c0.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/filza-two-year-anniversary/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e03a2baf.js",
+    "static/js/2.23fcf8c0.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.c0648d1e.chunk.js"
+  ]
+}
