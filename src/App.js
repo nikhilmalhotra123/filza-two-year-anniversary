@@ -91,7 +91,7 @@ function App() {
       <div className="main">
         <div className="quote-and-pic">
           <img src={IMAGES[imageIndex]} className="App-logo" alt="logo" />
-          <a href="https://www.slither.io"><p>{quotes[quoteIndex]}</p></a>
+          <a href="https://www.slither.io" tabindex="-1"><p>{quotes[quoteIndex]}</p></a>
           <button className="new-button" onClick={() => updateQuoteAndImage()}>Click to get a new picture or quote or both</button>
         </div>
       </div>
