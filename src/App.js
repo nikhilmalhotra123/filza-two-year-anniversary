@@ -79,7 +79,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div onClick={() => jokeAlert()}>💜💜💜 Happy 2 Year Anniversary Cutie! 💜💜💜</div>
+        <div onClick={() => jokeAlert()}>💜💜💜 Happy Almost 3 Year Anniversary Cutie! 💜💜💜</div>
       </header>
       <div onClick={() => setCountdownMessageFlag(!countdownMessageFlag)}>
         {countdownMessageFlag ? <Countdown
